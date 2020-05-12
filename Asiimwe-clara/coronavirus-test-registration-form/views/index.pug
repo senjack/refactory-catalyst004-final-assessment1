@@ -1,0 +1,79 @@
+doctype html
+html(lang="en")
+  head
+    meta(charset="UTF-8")
+    meta(name="viewport" content="width=device-width, initial-scale=1.0")
+    link(rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous")
+    link(rel="stylesheet" href="/css/form.css")
+    title Registration form
+  body
+    header
+      center
+        ul#left-nav
+          li
+            a(href="")
+              img(src="/images/form-header-image.png")
+    section
+      center
+        p  Ministry of Health
+        h2 COVID-19 (CORONA VIRUS)
+        p Virus-Test Registration Form
+    .container
+      form#entryForm(name="entryForm")
+        .row
+          .col
+            label(for="input") Surname
+            input#surname.form-control(type="text" name="surname" required="")
+            #error1(style="display: none; color: red;") This field is required
+          .col
+            label(for="input") Given name
+            input#givenname.form-control(type="text" name="givenname" required="")
+             #error1(style="display: none; color: red;") This field is required
+        br
+        br
+        .row
+          .col
+            label(for="input") Date of Birth
+            input#dob.form-control(type="datetime-local" name="dateofbirth" required="")
+            #error1(style="display: none; color: red;") Select Date of Birth
+          .col
+            label(for="input") Place of residence
+            input.form-control(type="text" id="residence" pattern="/^[a-zA-Z\s][0-19]{20}$/")
+        br
+        br
+        .row
+          .col
+            label(for="input") Occupation
+            input.form-control(type="text" pattern="/^[a-zA-Z\s][5-50]{46}$/")
+          .col
+            label(for="input") Nationality
+            input.form-control(type="text" pattern="/^[a-zA-Z\s][5-20]{16}$/")
+        br
+        br
+        .row
+          .col
+            label(for="input") Gender
+        .custom-control.custom-radio.custom-control-inline
+          input#customRadioInline1.custom-control-input(type="radio" name="customRadioInline1")
+          label.custom-control-label(for="customRadioInline1") Male
+        .custom-control.custom-radio.custom-control-inline
+          input#customRadioInline2.custom-control-input(type="radio" name="customRadioInline1")
+          label.custom-control-label(for="customRadioInline2") Female
+        br
+        br
+        .row
+          .col
+            label(for="input") Category
+            br
+          .col
+            select#category(name="")
+              option(value="0") --Select Category--
+              option(value="Returnee") Returnee
+              option(value="Contact") Contact
+              option(value="Alert") Alert
+              option(value="Volunteer") Volunteer
+          br
+          br
+          .button
+            button.btn.btn-primary(value="submit" onclick="validation()") Register
+    script(src="/js/validation.js")

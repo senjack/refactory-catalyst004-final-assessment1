@@ -1,0 +1,21 @@
+body {
+    margin: 50px;
+    padding: 20px;
+    border: 20px;
+}
+
+.container{
+    max-width: 500px;
+    margin: 2rem auto;
+
+
+}
+
+label{
+    display: inline;
+}
+
+.button{
+    max-width: 100px;
+    display: inline;
+}
